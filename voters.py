@@ -2,8 +2,6 @@ import os
 import csv
 
 row_count = 0
-listOfCandidates = []
-theCandidates = []
 dictionary = {}
 percentdictionary ={}
 winner = ''
@@ -16,19 +14,10 @@ with open(csvpath, 'r') as csvfile:
     next(csvfile)
     for row in csvreader:
         row_count += 1
-        newCandidate = True
-        listOfCandidates.append(row[2])
-
-    for item in listOfCandidates:
-        if item not in theCandidates:
-            theCandidates.append(item)
-
-    for candidate in theCandidates:
-        dictionary[candidate] = 0
-    
-    for candidate in listOfCandidates:
-        if candidate in dictionary:
-            dictionary[candidate] += 1
+        if row[2] not in dictionary:
+            dictionary[row[2]] = 1
+        else:
+            dictionary[row[2]] += 1
 
     values = dictionary.values()
     total = sum(values)
