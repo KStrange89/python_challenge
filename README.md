@@ -1,4 +1,4 @@
-# python_challenge
+# Python Challenge
 
 This is a two part challenge. Both parts involve reading from a CSV file, doing what needs to be done, and then writing to a text file. 
 
