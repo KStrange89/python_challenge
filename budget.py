@@ -1,6 +1,7 @@
 import os
 import csv
 
+#make a path to the budget data
 csvpath = os.path.join('Resources', 'budget_data.csv')
 
 num_rows = 0
@@ -15,18 +16,25 @@ datelist = []
 difflist = []
 totaldifferences= 0
 
+#read the budget data
 with open(csvpath, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ",")
     next(csvfile)
+    #count the months
+    #find the total P/L for the time period
+    #store the P/L vaues and dates in lists
     for rows in csvreader:
         num_rows += 1
         total += int(rows[1])
         numlist.append(int(rows[1]))
         datelist.append(rows[0])
     
+    #find the change in P/L from month to month
     for i in range(1, num_rows):
         difflist.append(numlist[i]-numlist[i-1])
 
+    #find the biggest increase and biggest deacrease
+    #find the corresponding month
     for i in range(len(difflist)):
         totaldifferences += difflist[i]
         if difflist[i] < decrease:
@@ -35,7 +43,7 @@ with open(csvpath, 'r') as csvfile:
         elif difflist[i] > increase:
             increase = difflist[i]
             datei = datelist[i+1]
-    
+    #find the average monthly change
     average = round(totaldifferences / len(difflist), 2)
     
 print("Financial Analysis")
