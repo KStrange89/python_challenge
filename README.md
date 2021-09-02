@@ -6,4 +6,6 @@ I was tasked with counting votes in a local election to determine the winner. I 
 
 I really enjoyed this challenge. For the first part, I was able to check my work by using Excel. This gave me the confidence in my script I needed to be able to do the second part without Excel, as the second file was considerably larger than the first.
 
+In the Extras sections, I took some employee information into a dataframe and changed it to be more esthetically pleasing. I was probably supposed to do this in VSC, but I didn't start until after being introduced to Jupyter Notebook and Pandas, and I wanted more practice with that so I did it that way instead. 
+
 
